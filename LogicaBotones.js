@@ -100,15 +100,19 @@ function play() { // ejecuta toda la logica del automata
                     if (cadena[index] == 'a') { // lee a
                         cadena[index] = 'a'; // pone a
                         document.getElementById(((px + (index * 60)) + "")).innerHTML = (cadena[index] + "");
+                        document.getElementById(((px + ((index-1) * 60)) + "")).style = "fill:red;"
+                        document.getElementById(((px + (index * 60)) + "")).style = "fill:green;"
                         index++; // derecha
                         console.log("estado q1 lee a pone a y derecha");
                     } else if (cadena[index] == 'b') { // lee b
                         cadena[index] = 'a'; //pone a 
                         document.getElementById(((px + (index * 60)) + "")).innerHTML = (cadena[index] + "");
+                        document.getElementById(((px + ((index-1) * 60)) + "")).style = "fill:red;"
+                        document.getElementById(((px + (index * 60)) + "")).style = "fill:green;"
                         index++; // derecha
                         console.log("estado q1 lee b pone a y derecha");
                     } else { // lee # blanco
-                       // document.getElementById(((px + (index * 60)) + "")).innerHTML = (cadena[index] + "");
+                        document.getElementById(((px + ((index-1) * 60)) + "")).style = "fill:red;"
                         index--; //izquierda
                         estado = "q2"; //cambia a q2
                         console.log("estado q1 lee vacio pone a y izquierda");
@@ -120,18 +124,21 @@ function play() { // ejecuta toda la logica del automata
                 case 'q2':
                     console.log(cadena);
                     if (cadena[index] == 'a') { // lee a
-                        cadena[index] = 'a'; // pone a
-                        document.getElementById(((px + (index * 60)) + "")).innerHTML = (cadena[index] + "");
+                        cadena[index] = 'a'; // pone a  
+                        document.getElementById(((px + ((index+1) * 60)) + "")).style = "fill:red;"        
+                        document.getElementById(((px + (index * 60)) + "")).innerHTML = (cadena[index] + "") ;
+                        document.getElementById(((px + (index * 60)) + "")).style = "fill:green;"
                         index--; // izquierda
                         console.log("estado q2 lee a pone a y izquierda");
                     } else { // lee # blanco
-                      //  document.getElementById(((px + (index * 60)) + "")).innerHTML = (cadena[index] + "");
+                        document.getElementById(((px + ((index+1) * 60)) + "")).style = "fill:red;"
+                    //    document.getElementById(((px + (index * 60)) + "")).style = "fill:green;"
                         index++;
                         estado = "q3";
                         console.log("estado q3 lee vacio pone a y derecha inicio");
                     }
 
-               
+                
                     efectoGrafo("q2", anterior, estado, cadena[index], i);
                     console.log("2f");
                     break;
@@ -139,8 +146,9 @@ function play() { // ejecuta toda la logica del automata
                     VerAlertNice("DATOS NO validos", "error");
             }
 
-            if (estado == "q3") {
+            if (estado == "q3") {    
                 clearInterval(intervalo);
+                document.getElementById(((px + (index * 60)) + "")).style = "fill:green;"
             }
             anterior = cadena[index - 1];
 
@@ -151,6 +159,8 @@ function play() { // ejecuta toda la logica del automata
         var intervalo = setInterval(dale, velocidad);
 
         efectoGrafo("q2", cadena[index], estado, cadena[index], i);
+
+        
 
     }
     VerAlertNice("Correcto", "success");
