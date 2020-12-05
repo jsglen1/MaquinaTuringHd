@@ -33,6 +33,7 @@ var velocidad = 2000;
 function load() { // carga cadena
     cadena = document.getElementById("fcadena").value;
     cadena = cadena.split("");
+    console.log("cadena "+cadena)
 
     vel = document.getElementById("fvelo").value;
     $("#btnPlay").prop("disabled", false);
@@ -64,37 +65,39 @@ function play() { // ejecuta toda la logica del automata
         llenarceldas(); */
 
      /*   while (estado != "q3") { */
+        anterior = cadena[index];
 
-        
              var dale = function(){
-                anterior = cadena[index];
+                
+               
             switch (estado) {
                 case 'q1':
                     if (cadena[index] == 'a') { // lee a
                         cadena[index] = 'a'; // pone a
                         index++; // derecha
-                        console.log("1.1");
+                        console.log("estado q1 lee a pone a y derecha");
                     } else if (cadena[index] == 'b') { // lee b
-                        cadena[index] = 'b'; //pone b 
+                        cadena[index] = 'a'; //pone a 
                         index++; // derecha
-                        console.log("1.2");
+                        console.log("estado q1 lee b pone a y derecha");
                     } else { // lee # blanco
                         index--; //izquierda
                         estado = "q2"; //cambia a q2
-                        console.log("1.3");
+                        console.log("estado q1 lee vacio pone a y izquierda");
                     }
                     efectoGrafo("q1", anterior, estado, cadena[index], i);
-                    console.log("1f");
+                    console.log("1f"+"cadena["+index+"] = "+cadena[index-1]);
                     break;
                 case 'q2':
+                    console.log(cadena);
                     if (cadena[index] == 'a') { // lee a
                         cadena[index] = 'a'; // pone a
                         index--; // izquierda
-                        console.log("2.1");
+                        console.log("estado q2 lee a pone a y izquierda");
                     } else { // lee # blanco
                         index++;
                         estado = "q3";
-                        console.log("2.2");
+                        console.log("estado q3 lee vacio pone a y derecha inicio");
                     }
                     efectoGrafo("q2", anterior, estado, cadena[index], i);
                     console.log("2f");
@@ -106,22 +109,19 @@ function play() { // ejecuta toda la logica del automata
             if(estado=="q3"){
                 clearInterval(intervalo);
             }
+            anterior = cadena[index-1];
 
             } ;
 
-            efectoGrafo("q2", cadena[index], estado, cadena[index], i);
-            
-
             var intervalo = setInterval(dale,velocidad);
 
-            
-            
+            efectoGrafo("q2", cadena[index], estado, cadena[index], i);
+
        /* } */
         
     }
     VerAlertNice("Correcto", "success");
 }
-
 
 //animacion de la barra azul no me funciono como queria ;C
 
