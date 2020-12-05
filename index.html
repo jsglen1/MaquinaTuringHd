@@ -6,7 +6,7 @@
 <head>
 
 
-  
+  <link rel="stylesheet" href="tape.css">
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -18,7 +18,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
- 
+
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -83,40 +83,50 @@
     </div>
 
 
-    <div class="container">
-      <div class="sliderinicio" id="slip">
-        <div class="items"></div>
-        <div class="items"></div>
-        <div class="items"></div>
-        <div class="items"></div>
-        <div class="items"></div>
-        <div class="items"></div>
-        <div class="items"></div>
-        <div class="items"></div>
-        <div class="items"></div>
-        <div class="items"></div>
-        <div class="items"></div>
-        <div class="items"></div>
-        <div class="items"></div>
-        <div class="items"></div>
-        <div class="items"></div>
-      </div>
-      <div class="contriangulo col-md-12">
-        <div class="triangle">
-          <div class="empty"></div>
-        </div>
-      </div>
+    <!-- codigo improvisado  ;v-->
+    <svg class="tm-tape my-3" width="95%" viewBox="0 0 890 70">
 
-    </div>
+      <!-- cuadros  ;v-->
+      <rect class="tape-head" width="60" height="60" x="45" y="5"> </rect> <!-- c1 -->
+      <rect class="tape-head" width="60" height="60" x="105" y="5"> </rect> <!-- c2 -->
+      <rect class="tape-head" width="60" height="60" x="165" y="5"> </rect> <!-- c3 -->
+      <rect class="tape-head" width="60" height="60" x="225" y="5"> </rect> <!-- c4 -->
+      <rect class="tape-head" width="60" height="60" x="285" y="5"> </rect> <!-- c5 -->
+      <rect class="tape-head" width="60" height="60" x="345" y="5"> </rect> <!-- c6 -->
+      <rect class="tape-head" width="60" height="60" x="405" y="5"> </rect> <!-- mitad pantalla    c7 -->
+      <rect class="tape-head" width="60" height="60" x="465" y="5"> </rect> <!-- c8 -->
+      <rect class="tape-head" width="60" height="60" x="525" y="5"> </rect> <!-- c9 -->
+      <rect class="tape-head" width="60" height="60" x="585" y="5"> </rect> <!-- c10 -->
+      <rect class="tape-head" width="60" height="60" x="645" y="5"> </rect> <!-- c11 -->
+      <rect class="tape-head" width="60" height="60" x="705" y="5"> </rect> <!-- c12 -->
+      <rect class="tape-head" width="60" height="60" x="765" y="5"> </rect> <!-- c13 -->
+      <rect class="tape-head" width="60" height="60" x="825" y="5"> </rect> <!-- c14 -->
 
+      <!-- la info   ;v-->
+      <text id="60" x="60" y="30" fill="red">...</text>
+      <text id="120" x="120" y="30" fill="red">...</text>
+      <text id="180" x="180" y="30" fill="red">...</text>
+      <text id="240" x="240" y="30" fill="red">...</text>
+      <text id="300" x="300" y="30" fill="red">...</text>
+      <text id="360" x="360" y="30" fill="red">...</text>
+      <text id="420" x="420" y="30" fill="red">...</text>
+      <text id="480" x="480" y="30" fill="red">...</text>
+      <text id="540" x="540" y="30" fill="red">...</text>
+      <text id="600" x="600" y="30" fill="red">...</text>
+      <text id="660" x="660" y="30" fill="red">...</text>
+      <text id="720" x="720" y="30" fill="red">...</text>
+      <text id="780" x="780" y="30" fill="red">...</text>
+      <text id="840" x="840" y="30" fill="red">...</text>
 
+    </svg>
+    <!--END cinta ;v-->
 
     <div class="container-fluid">
       <div class="row align-center">
         <div class="col-md-7 d-flex justify-content-center contBotones">
           <input class="mr-3" type="text" placeholder="velocidad en segundos" id="fvelo" name="fcadena"><br>
           <input type="text" placeholder="Ingrese la cadena" id="fcadena" name="fcadena"><br>
-          
+
           <button class="btnOP btn-success" onclick="load()">Cargar</button>
           <button id="btnPlay" class="btnOP btn-dark" onclick="play()"><i class="fas fa-play-circle"></i></button>
           <button id="btnStop" class="btnOP btn-dark" onclick="stop()"><i class="fas fa-stop-circle"></i></button>
@@ -150,7 +160,6 @@
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="https://kit.fontawesome.com/ae43cf70c2.js" crossorigin="anonymous"></script>
@@ -158,7 +167,7 @@
   <script src="LogicaBotones.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
- 
+
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="https://kit.fontawesome.com/ae43cf70c2.js" crossorigin="anonymous"></script>
 
