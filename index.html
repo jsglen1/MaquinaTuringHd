@@ -1,0 +1,167 @@
+<!--  creado por jesus miguel glen pedrozo - cod 2017214036-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+  <link rel="stylesheet" type="text/css" href="plugins/slick/slick.css" />
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="plugins/slick/slick.css" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body class="container-fluid  justify-content-center">
+  <!-- Navigation -->
+
+
+  <!-- Page Content -->
+  <section class="py-3">
+    <div class="container-fluid">
+      <h1 class="text-center text-danger">Maquina de turing</h1>
+      <p class="lead text-center">Esta Maquina fue diseñada para un lenguaje {a,b}. el proposito es reemplazar todas las
+        'b' que se
+        encuentran en la cinta por 'a' y hacer que el lector se posicione al finalizar en el inicio de la primera letra.
+      </p>
+    </div>
+
+
+
+    <div class="d-flex justify-content-center" id="maq-turing" style="
+  margin: -146px;">
+      <svg width="500" height="700" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <!--q1-->
+        <ellipse class="nodo" id="gq1" stroke="black" stroke-width="1" fill="none" cx="347.5" cy="229.5" rx="30"
+          ry="30" />
+        <text x="337.5" y="235.5" font-family="Times New Roman" font-size="20">q1</text>
+        <!--q2-->
+        <ellipse class="nodo" id="gq2" stroke="black" stroke-width="1" fill="none" cx="242.5" cy="369.5" rx="30"
+          ry="30" />
+        <text x="232.5" y="370.5" font-family="Times New Roman" font-size="20">q2</text>
+        <!--q3-->
+        <ellipse class="nodo" stroke="black" stroke-width="1" fill="black" cx="350.5" cy="499.5" rx="30" ry="30" />
+        <ellipse id="gq3" stroke="black" stroke-width="1" fill="white" cx="350.5" cy="499.5" rx="24" ry="24" />
+        <text x="340.5" y="505.5" font-family="Times New Roman" font-size="20">q3</text>
+        <!--lq1ba-->
+        <path stroke="black" stroke-width="1" fill="none" d="M 358.996,201.917 A 22.5,22.5 0 1 1 376.386,221.847" />
+        <text id="q1ba" x="333.5" y="166.5" font-family="Times New Roman" font-size="20">b &gt; a, R</text>
+        <polygon fill="black" stroke-width="1" points="376.386,221.847 384.8,226.115 383.909,216.154" />
+        <!--lq1aa-->
+        <path stroke="black" stroke-width="1" fill="none" d="M 376.99,234.332 A 22.5,22.5 0 1 1 361.602,255.846" />
+        <text id="q1aa" x="338.5" y="298.5" font-family="Times New Roman" font-size="20">a &gt; a, R</text>
+        <polygon fill="black" stroke-width="1" points="361.602,255.846 359.387,265.016 368.875,261.856" />
+        <!--lq2BB-->
+        <polygon stroke="black" stroke-width="1" points="327.5,251.5 262.5,347.5" />
+        <polygon fill="black" stroke-width="1" points="260.5,337.5 272.5,334.5 270.5,345.5" />
+        <text id="q2BB" x="210.5" y="290.5" font-family="Times New Roman" font-size="20">B &gt; B, L</text>
+        <!--lq2aa-->
+        <path stroke="black" stroke-width="1" fill="none" d="M 215.269,359.531 A 22.5,22.5 0 1 1 244.827,339.708" />
+        <text id="q2aa" x="132.5" y="347.5" font-family="Times New Roman" font-size="20">a &gt; a, L</text>
+        <polygon fill="black" stroke-width="1" points="239.827,339.708 251.637,343.179 247.942,325.726" />
+        <!--lq3BB-->
+        <polygon stroke="black" stroke-width="1" points="249.898,398.527 330.102,480.473" />
+        <polygon fill="black" stroke-width="1" points="320.102,480.473 325.9,469.3 327.891,476.432" />
+        <text id="q3BB" x="220.5" y="455.5" font-family="Times New Roman" font-size="20">B &gt; B, R</text>
+      </svg>
+    </div>
+
+
+    <div class="container">
+      <div class="sliderinicio" id="slip">
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+      </div>
+      <div class="contriangulo col-md-12">
+        <div class="triangle">
+          <div class="empty"></div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div class="container-fluid">
+      <div class="row align-center">
+        <div class="col-md-7 d-flex justify-content-center contBotones">
+          <input class="mr-3" type="text" placeholder="velocidad en segundos" id="fvelo" name="fcadena"><br>
+          <input type="text" placeholder="Ingrese la cadena" id="fcadena" name="fcadena"><br>
+          
+          <button class="btnOP btn-success" onclick="load()">Cargar</button>
+          <button id="btnPlay" class="btnOP btn-dark" onclick="play()"><i class="fas fa-play-circle"></i></button>
+          <button id="btnStop" class="btnOP btn-dark" onclick="stop()"><i class="fas fa-stop-circle"></i></button>
+          <button id="btnPause" class="btnOP btn-dark" onclick="pause()"><i class="fas fa-pause-circle"></i></button>
+          <button id="btnStep" class="btnOP btn-dark" onclick="step()"><i class="fas fa-step-forward"></i></button>
+        </div>
+        <div class="col-md-5">
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer style="background-color: darkgray;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4 text-white">
+          <h5 class="text-muted text-center my-5">Turing Machine</h5>
+        </div>
+        <div class="col-md-4 img-fluid">
+          <img src="universidad.png">
+        </div>
+        <div class="col-md-4 text-danger">
+          <h4 class="my-3 text-muted">INGENIERÍA DE SISTEMAS</h4>
+          <h4 class="text-muted">COMPILADORES</h4>
+          <h4 class="text-muted">2020-2</h4>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="plugins/slick/slick.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="https://kit.fontawesome.com/ae43cf70c2.js" crossorigin="anonymous"></script>
+
+  <script src="LogicaBotones.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="plugins/slick/slick.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="https://kit.fontawesome.com/ae43cf70c2.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
